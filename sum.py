@@ -37,16 +37,16 @@
 
 #118- misol
 
-# class Solution:
-#     def generate(self, numRows: int) -> list[list[int]]:
-#         t = [[1]]
-#         for i in range(numRows-1):
-#             tempt = [0] + t[-1] +[0]
-#             row = []
-#             for j in range(len(t[-1])+1):
-#                 row.append(tempt[j]+tempt[j+1])
-#             t.append(row)
-#         return  t
+def palindrom( numRows: int):
+    t = [[1]]
+    for i in range(numRows-1):
+        tempt = [0] + t[-1] +[0]
+        row = []
+        for j in range(len(t[-1])+1):
+            row.append(tempt[j]+tempt[j+1])
+        t.append(row)
+    return  t
 
+print(palindrom(10))
 
-
+return  a>0
