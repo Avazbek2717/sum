@@ -37,16 +37,79 @@
 
 #118- misol
 
-def palindrom( numRows: int):
-    t = [[1]]
-    for i in range(numRows-1):
-        tempt = [0] + t[-1] +[0]
-        row = []
-        for j in range(len(t[-1])+1):
-            row.append(tempt[j]+tempt[j+1])
-        t.append(row)
-    return  t
+# def palindrom( numRows: int):
+#     t = [[1]]
+#     for i in range(numRows-1):
+#         tempt = [0] + t[-1] +[0]
+#         row = []
+#         for j in range(len(t[-1])+1):
+#             row.append(tempt[j]+tempt[j+1])
+#         t.append(row)
+#     return  t
 
-print(palindrom(10))
+# print(palindrom(10))
 
-return  a>0
+
+# # 58 - misol
+# a = 'Hello world'
+# b = a.split()
+# v = len(b[-1])
+
+# c = pow(2,31)
+# print(c)
+
+
+
+
+# 202 - misol
+
+
+# def get(n):
+
+#     s = set()  
+#     while n != 1 and n not in s:
+#         s.add(n)  
+#         nsum = 0
+#         while n>0:
+#             n,digit = divmod(n,10)
+#             nsum+=digit**2
+#         n = nsum
+#     return n==1
+
+
+# print(get(19))
+
+
+def get(n):
+            s = set()
+            while n!=1 and n not in s:
+                s.add(n)
+                nsum = 0
+                while n>0:
+                    n,digit = divmod(n,10)
+                    nsum = nsum + digit**2
+                n = nsum
+            return n == 1
+
+print(get(19))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
