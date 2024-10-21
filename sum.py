@@ -60,40 +60,34 @@
 
 
 
-
 # 202 - misol
 
 
 # def get(n):
-
-#     s = set()  
-#     while n != 1 and n not in s:
-#         s.add(n)  
-#         nsum = 0
-#         while n>0:
-#             n,digit = divmod(n,10)
-#             nsum+=digit**2
-#         n = nsum
-#     return n==1
-
+#             s = set()
+#             while n!=1 and n not in s:
+#                 s.add(n)
+#                 nsum = 0
+#                 while n>0:
+#                     n,digit = divmod(n,10)
+#                     nsum = nsum + digit**2
+#                 n = nsum
+#             return n == 1
 
 # print(get(19))
 
 
-def get(n):
-            s = set()
-            while n!=1 and n not in s:
-                s.add(n)
-                nsum = 0
-                while n>0:
-                    n,digit = divmod(n,10)
-                    nsum = nsum + digit**2
-                n = nsum
-            return n == 1
 
-print(get(19))
+s = 'anagram'
+t = 'nagram'
 
 
+
+for i in min(len(t)):
+    if s is i:
+        print(True)
+    else:
+        False
 
 
 
