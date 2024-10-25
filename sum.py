@@ -209,22 +209,89 @@ The distinct triplets are [-1,0,1] and [-1,-1,2].
 Notice that the order of the output and the order of the triplets does not matter.
 Example 2:'''
 
-def threesum(a:list):
-    a.sort()
-    result  = []
-    c = len(a)
-    for i in range(c-2):
-        if i >0 and a[i]==a[i-1]:
-            continue
-        for j in range(i+1,c-1):
-            if j>i+1 and a[j] == a[j-1]:
-                continue
-            for k in range(j+1,c):
-                if k>j+1 and a[k]==a[k-1]:
-                    continue
-                if a[i]+a[j]+a[k] ==0:
-                    result.append([a[i],a[j],a[k]])
-    return result
+# def threesum(a:list):
+#     a.sort()
+#     result  = []
+#     c = len(a)
+#     for i in range(c-2):
+#         if i >0 and a[i]==a[i-1]:
+#             continue
+#         for j in range(i+1,c-1):
+#             if j>i+1 and a[j] == a[j-1]:
+#                 continue
+#             for k in range(j+1,c):
+#                 if k>j+1 and a[k]==a[k-1]:
+#                     continue
+#                 if a[i]+a[j]+a[k] ==0:
+#                     result.append([a[i],a[j],a[k]])
+#     return result
 
-print(threesum([0,1,1]))
+# print(threesum([0,1,1]))
+
+# class Solution:
+#     def plusOne(self, digits: List[int]) -> List[int]:
+#         n_str =''.join(map(str,digits))
+#         q_n =int(n_str)+1
+#         l = [int (digit) for digit in str(q_n) ]
+#         return l
             
+
+'''Input: nums = [1,1,2]
+Output: 2, nums = [1,2,_]
+Explanation: Your function should return k = 2, with the first two elements of nums being 1 and 2 respectively.
+It does not matter what you leave beyond the returned k (hence they are underscores)'''
+# def get_dubl(nums: list):
+#     c = 1
+#     b = []
+#     for i in range(1,len(nums)):
+#         if nums[i] != nums[i-1]:
+#             nums[c] = nums[i]
+#             b.append(nums[c])
+#     return b
+
+# print(get_dubl([1,1,2]))
+
+# a = [1,1,2]
+# b = lambda c: 
+# def remove_duplicates(lst):
+#     result = []
+#     seen = set()
+    
+#     for item in lst:
+#         if item in seen:
+#             result.append('_')
+#         else:
+#             result.append(item)
+#             seen.add(item)
+    
+#     return result
+
+# # Misol ro'yxat
+# input_list = [1, 1, 2]
+# output_list = remove_duplicates(input_list)
+# print(output_list)
+
+
+
+
+
+# def intt(x: int):
+#     b = str(x)
+#     c = list(b[::-1])
+#     c.pop(0)
+#     c.insert(0,'-')
+#     p = str(c)
+
+#     return int(p)
+
+# print(intt(-12))
+
+def son_q(x):
+    if x < 0:
+        r = -int(str(abs(x))[::-1])
+    else:
+        r = int(str(x)[::-1])
+    return r
+
+
+print(son_q(0))
