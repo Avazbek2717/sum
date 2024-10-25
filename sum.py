@@ -183,15 +183,48 @@
 
 
 
-def strStr( haystack: str, needle: str):
-    l1 = len(haystack)
-    l2 = len(needle)
-    for i in range(l1-l2+1):
-        if haystack[i:i+l2] == needle:
-            return i
-    return -1
+# def strStr( haystack: str, needle: str):
+#     l1 = len(haystack)
+#     l2 = len(needle)
+#     for i in range(l1-l2+1):
+#         if haystack[i:i+l2] == needle:
+#             return i
+#     return -1
 
-haystack = "sadbutsad"
-needle = "sad"
-b = strStr(haystack,needle)
-print(b)
+# # haystack = "sadbutsad"
+# # needle = "sad"
+# b = strStr('hello','ll')
+# print(b)
+
+
+
+
+'''Input: nums = [-1,0,1,2,-1,-4]
+Output: [[-1,-1,2],[-1,0,1]]
+Explanation: 
+nums[0] + nums[1] + nums[2] = (-1) + 0 + 1 = 0.
+nums[1] + nums[2] + nums[4] = 0 + 1 + (-1) = 0.
+nums[0] + nums[3] + nums[4] = (-1) + 2 + (-1) = 0.
+The distinct triplets are [-1,0,1] and [-1,-1,2].
+Notice that the order of the output and the order of the triplets does not matter.
+Example 2:'''
+
+def threesum(a:list):
+    a.sort()
+    result  = []
+    c = len(a)
+    for i in range(c-2):
+        if i >0 and a[i]==a[i-1]:
+            continue
+        for j in range(i+1,c-1):
+            if j>i+1 and a[j] == a[j-1]:
+                continue
+            for k in range(j+1,c):
+                if k>j+1 and a[k]==a[k-1]:
+                    continue
+                if a[i]+a[j]+a[k] ==0:
+                    result.append([a[i],a[j],a[k]])
+    return result
+
+print(threesum([0,1,1]))
+            
