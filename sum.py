@@ -286,12 +286,58 @@ It does not matter what you leave beyond the returned k (hence they are undersco
 
 # print(intt(-12))
 
-def son_q(x):
-    if x < 0:
-        r = -int(str(abs(x))[::-1])
-    else:
-        r = int(str(x)[::-1])
-    return r
+# class Solution:
+#     def reverse(self, x: int) -> int:
 
 
-print(son_q(0))
+#         if x < 0:
+#             r = -int(str(abs(x))[::-1])
+#         else:
+#             r = int(str(x)[::-1])
+        
+
+
+#         if r not in range(-2**31, 2**31-1):
+#             return 0
+#         return r
+
+
+
+
+
+# def get_dubl(nums: list):
+#     c = 1
+#     b = []
+#     for i in range(1,len(nums)):
+#         if nums[i] != nums[i-1]:
+#             nums[c] = nums[i]
+#             b.append(nums[c])
+#     return b
+
+# print(get_dubl([1,1,2]))
+
+
+# def remove(nums):
+#     l = 1
+#     for i in range(1,len(nums)):
+#         if nums[i]!=nums[i-1]:
+#             nums[l] = nums[i]
+#             l+=1
+#     return l
+
+# print(remove([1,1,2]))
+
+
+def ugly_number(n):
+    if n<=0:
+        return False
+    
+    for i in [2,3]:
+        if n<=0:
+            return False
+        while n%i==0:
+            n = n//i
+            return False
+    return n==1
+
+print(ugly_number(0))
