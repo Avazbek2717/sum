@@ -328,16 +328,64 @@ It does not matter what you leave beyond the returned k (hence they are undersco
 # print(remove([1,1,2]))
 
 
-def ugly_number(n):
-    if n<=0:
-        return False
+# def ugly_number(n):
+#     if n<=0:
+#         return False
     
-    for i in [2,3]:
-        if n<=0:
-            return False
-        while n%i==0:
-            n = n//i
-            return False
-    return n==1
+#     for i in [2,3]:
+#         if n<=0:
+#             return False
+#         while n%i==0:
+#             n = n//i
+#             return False
+#     return n==1
 
-print(ugly_number(0))
+# print(ugly_number(0))
+
+
+'''Input: date = "2019-01-09"
+Output: 9
+Explanation: Given date is the 9th day of the year in 2019.
+'''
+# from datetime import datetime
+
+
+
+# def date(time: str):
+#     now  = datetime.strptime(time,"%Y-%m-%d")
+#     return now.timetuple().tm_yday
+# print(date('2019-02-10'))
+
+    
+# '''Input: day = 31, month = 8, year = 2019
+# Output: "Saturday"'''
+# from datetime import datetime
+# def week(day,month,year):
+#     w = (datetime(year,month,day))
+#     c = w.strftime('%A')
+#     return c
+
+    
+
+# print(week(1,1,2024))
+
+
+
+'''Input: x = 4
+Output: 2
+Explanation: The square root of 4 is 2, so we return 2.'''
+def sqrt(x: int):
+    start, end = 0, x
+    while start <= end:
+        mid = (start + end) // 2
+        if mid * mid == x:
+            return mid
+        elif mid * mid < x:
+            start = mid + 1
+            result = mid
+        else:
+            end = mid - 1
+    
+    return result
+print(sqrt(8))
+
