@@ -374,18 +374,85 @@ Explanation: Given date is the 9th day of the year in 2019.
 '''Input: x = 4
 Output: 2
 Explanation: The square root of 4 is 2, so we return 2.'''
-def sqrt(x: int):
-    start, end = 0, x
-    while start <= end:
-        mid = (start + end) // 2
-        if mid * mid == x:
-            return mid
-        elif mid * mid < x:
-            start = mid + 1
-            result = mid
-        else:
-            end = mid - 1
+# def sqrt(x: int):
+#     start, end = 0, x
+#     while start <= end:
+#         mid = (start + end) // 2
+#         if mid * mid == x:
+#             return mid
+#         elif mid * mid < x:
+#             start = mid + 1
+#             result = mid
+#         else:
+#             end = mid - 1
     
-    return result
-print(sqrt(8))
+#     return result
+# print(sqrt(8))
 
+# def sort_anylist(x:list):
+#     b = len(x)
+#     for i in range(b):
+#         for j in range(b-i-1):
+#             if  x[j]>x[j+1]:
+#                 x[j],x[j+1] = x[j+1],x[j]
+#     return x
+# g = [1,5,3,9,7]
+# print(sort_anylist(g))
+
+
+
+# def sort_reverse(s: list):
+#     x = len(s)
+#     for i in range(x):
+#         for j in range(x-i-1):
+#             if s[j]>s[j+1]:
+#                 s[j],s[j+1]=s[j+1],s[j]
+#     return s[::-1]
+
+# print(sort_reverse([1,5,3,10,7,7]))
+
+'''Input: nums = [2,2,1]
+# Output: 1'''
+# def single(nums:list):
+#     a = 0
+#     for i in nums:
+#         a = i^a
+#     return a
+
+# print(single([1,2,2]))
+
+
+
+
+
+# def sort_list(li: list,target: int):
+#     if target in li:
+#         return li.index(target)
+#     else:
+#         li.append(target)
+#         li.sort()
+#         return li.index(target)
+# print(sort_list([1,2,5],3))
+
+def convertToTitle(columnNumber):
+    result = ""
+    while columnNumber > 0:
+        columnNumber -= 1
+        remainder = columnNumber % 26
+        result = chr(remainder + ord('A')) + result
+        columnNumber //= 26
+    return result
+
+# Misol
+print(convertToTitle(18))  # Output: "AB"
+
+
+def found_words(nums: int):
+    result = ''
+    while nums>0:
+        nums-=1
+        remain = nums%26
+        result = chr(remain + ord('A')) + result
+        nums//=26
+    return result
+print(found_words(4))
