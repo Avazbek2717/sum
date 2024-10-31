@@ -434,25 +434,28 @@ Explanation: The square root of 4 is 2, so we return 2.'''
 #         return li.index(target)
 # print(sort_list([1,2,5],3))
 
-def convertToTitle(columnNumber):
-    result = ""
-    while columnNumber > 0:
-        columnNumber -= 1
-        remainder = columnNumber % 26
-        result = chr(remainder + ord('A')) + result
-        columnNumber //= 26
-    return result
-
-# Misol
-print(convertToTitle(18))  # Output: "AB"
 
 
-def found_words(nums: int):
-    result = ''
-    while nums>0:
-        nums-=1
-        remain = nums%26
-        result = chr(remain + ord('A')) + result
-        nums//=26
-    return result
-print(found_words(4))
+# def found_words(nums: int):
+#     result = ''
+#     while nums>0:
+#         nums-=1
+#         remain = nums%26
+#         result = chr(remain + ord('A')) + result
+#         nums//=26
+#     return result
+# print(found_words(4))
+
+def stairs(number: int):
+    if number == 1:
+        return number
+    if number == 2:
+        return 2
+    
+    left, right =  1,2
+    for i in range(3,number+1):
+        left,right = right, left+right
+    return right
+print(stairs(2))
+
+  
