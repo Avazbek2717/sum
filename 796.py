@@ -5,3 +5,4 @@ def strstr(s:str,goal:str):
     print(goal_s)
     return goal in goal_s
 
+print()
